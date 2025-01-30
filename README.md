@@ -1,2 +1,10 @@
 # RepoScripting
-Para Scripting
+
+```csharp
+void Saludar()
+{
+    Console.WriteLine("Holi");
+}
+
+Saludar();
+```
