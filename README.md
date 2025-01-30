@@ -32,11 +32,30 @@ double CalcularPromedio(double num1, double num2, double num3)
 }
 Console.WriteLine(CalcularPromedio(4.5, 3.2, 6.7));
 ```
-### 5. Con multiples parametro
+### 5. Con Array
 ```csharp
-double CalcularPromedio(double num1, double num2, double num3)
+int SumarElementos(int[] numeros)
 {
-    return (num1 + num2 + num3) / 3;
+    int suma = 0;
+    foreach (int num in numeros)
+    {
+        suma += num;
+    }
+    return suma;
 }
-Console.WriteLine(CalcularPromedio(4.5, 3.2, 6.7));
+
+int[] arreglo = { 1, 2, 3, 4 };
+Console.WriteLine(SumarElementos(arreglo));
+```
+### 6. Con Lista
+```csharp
+void ImprimirLista(List<string> nombres)
+{
+    foreach (var nombre in nombres)
+    {
+        Console.WriteLine(nombre);
+    }
+}
+List<string> nombres = new List<string> { "Juan", "María", "Pedro" };
+ImprimirLista(nombres);
 ```
