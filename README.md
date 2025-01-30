@@ -160,7 +160,7 @@ Console.WriteLine("Ingresa tres números:");
     int maximo = EncontrarMaximo(num1, num2, num3);
     Console.WriteLine("El número mayor es: " + maximo);
 ```
-### 10. + o - o 0
+### 11. + o - o 0
 ```csharp
 void VerificarNumero(int numero)
 {
@@ -209,5 +209,58 @@ Console.WriteLine("Ingresa una cadena de texto:");
 
             int cantidad = ContarCaracter(texto, caracter);
             Console.WriteLine("El carácter " + caracter + " aparece " +cantidad+ " veces.");
+            Console.ReadLine();
+```
+### 13. Promedio de un arreglo
+```csharp
+double CalcularPromedio(int[] numeros)
+        {
+            int suma = 0;
+            foreach (int num in numeros)
+            {
+                suma += num;
+            }
+            return suma / (double)numeros.Length;
+        }
+Console.WriteLine("Ingresa el número de elementos:");
+            int cantidad = int.Parse(Console.ReadLine());
+
+            int[] numeros = new int[cantidad];
+
+            for (int i = 0; i < cantidad; i++)
+            {
+                Console.WriteLine("Ingresa el número "+ (i+1) +":");
+                numeros[i] = int.Parse(Console.ReadLine());
+            }
+
+            double promedio = CalcularPromedio(numeros);
+            Console.WriteLine("El promedio es: " + promedio);
+            Console.ReadLine();
+```
+### 14. Cuenta regresiva
+```csharp
+void ImprimirNumeros(int N)
+        {
+            for (int i = N; i >= 0; i--)
+            {
+                Console.WriteLine(i);
+            }
+        }
+ Console.WriteLine("Ingresa un número N:");
+    int N = int.Parse(Console.ReadLine());
+    ImprimirNumeros(N);
+```
+### 15. Con cadenas
+```csharp
+string InvertirCadena(string texto)
+{
+    char[] caracteres = texto.ToCharArray();  
+    Array.Reverse(caracteres);  
+    return new string(caracteres);  
+}
+Console.WriteLine("Ingresa una cadena para invertir:");
+            string texto = Console.ReadLine();
+            string textoInvertido = InvertirCadena(texto);
+            Console.WriteLine($"La cadena invertida es: "+ textoInvertido);
             Console.ReadLine();
 ```
