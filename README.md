@@ -160,3 +160,54 @@ Console.WriteLine("Ingresa tres números:");
     int maximo = EncontrarMaximo(num1, num2, num3);
     Console.WriteLine("El número mayor es: " + maximo);
 ```
+### 10. + o - o 0
+```csharp
+void VerificarNumero(int numero)
+{
+    if (numero > 0)
+        Console.WriteLine("El numero es positivo.");
+    else if (numero < 0)
+        Console.WriteLine("El numero es negativo.");
+    else
+        Console.WriteLine("El numero es cero.");
+}
+Console.WriteLine("Ingresa un número:");
+    int numero = int.Parse(Console.ReadLine());
+
+    VerificarNumero(numero);
+```
+### 12. Contador de letras
+```csharp
+vint ContarCaracter(string texto, char caracter)
+        {
+            int contador = 0;
+
+            foreach (char c in texto)
+            {
+                if (c == caracter)
+                    contador++;
+            }
+
+            return contador;
+        }int ContarCaracter(string texto, char caracter)
+        {
+            int contador = 0;
+
+            foreach (char c in texto)
+            {
+                if (c == caracter)
+                    contador++;
+            }
+
+            return contador;
+        }
+Console.WriteLine("Ingresa una cadena de texto:");
+            string texto = Console.ReadLine();
+
+            Console.WriteLine("Ingresa el carácter a contar:");
+            char caracter = char.Parse(Console.ReadLine());
+
+            int cantidad = ContarCaracter(texto, caracter);
+            Console.WriteLine("El carácter " + caracter + " aparece " +cantidad+ " veces.");
+            Console.ReadLine();
+```
