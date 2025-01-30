@@ -59,3 +59,12 @@ void ImprimirLista(List<string> nombres)
 List<string> nombres = new List<string> { "Juan", "María", "Pedro" };
 ImprimirLista(nombres);
 ```
+### 7. Con parametros cambiables
+```csharp
+void MostrarSaludo(string nombre = "Invitado")
+{
+    Console.WriteLine($"Hola, {nombre}!");
+}
+MostrarSaludo();
+MostrarSaludo("Carlos");
+```
