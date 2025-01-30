@@ -264,3 +264,108 @@ Console.WriteLine("Ingresa una cadena para invertir:");
             Console.WriteLine($"La cadena invertida es: "+ textoInvertido);
             Console.ReadLine();
 ```
+### 16. Con Subcadenas
+```csharp
+int ContarSubcadena(string texto, string subcadena)
+        {
+            int contador = 0;
+            int posicion = 0;    
+            while ((posicion = texto.IndexOf(subcadena, posicion)) != -1)
+            {
+                contador++;
+                posicion += subcadena.Length; 
+            }
+            return contador;
+        }
+ Console.WriteLine("Ingresa una cadena:");
+            string texto = Console.ReadLine();
+            Console.WriteLine("Ingresa la subcadena a buscar:");
+            string subcadena = Console.ReadLine();
+            int cantidad = ContarSubcadena(texto, subcadena);
+            Console.WriteLine("La subcadena "+ subcadena +" aparece "+ cantidad+ " veces en el texto.");
+```
+### 17. Con cadenas
+```csharp
+string InvertirCadena(string texto)
+{
+    char[] caracteres = texto.ToCharArray();  
+    Array.Reverse(caracteres);  
+    return new string(caracteres);  
+}
+Console.WriteLine("Ingresa una cadena para invertir:");
+            string texto = Console.ReadLine();
+            string textoInvertido = InvertirCadena(texto);
+            Console.WriteLine($"La cadena invertida es: "+ textoInvertido);
+            Console.ReadLine();
+```
+### 18. Transpuesta de una matriz
+```csharp
+int[,] TransponerMatriz(int[,] matriz)
+{
+    int filas = matriz.GetLength(0);
+    int columnas = matriz.GetLength(1);
+    int[,] transpuesta = new int[columnas, filas];
+
+    for (int i = 0; i < filas; i++)
+    {
+        for (int j = 0; j < columnas; j++)
+        {
+            transpuesta[j, i] = matriz[i, j];
+        }
+    }
+
+    return transpuesta;
+}
+int[,] matriz = {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    };
+
+    int[,] transpuesta = TransponerMatriz(matriz);
+
+    Console.WriteLine("Matriz transpuesta:");
+    for (int i = 0; i < transpuesta.GetLength(0); i++)
+    {
+        for (int j = 0; j < transpuesta.GetLength(1); j++)
+        {
+            Console.Write(transpuesta[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+```
+### 19. Intercambios
+```csharp
+oid Intercambiar(ref int a, ref int b)
+{
+    a = a + b;  
+    b = a - b;  
+    a = a - b;  
+}
+    int a = 5, b = 10;
+    Console.WriteLine("Antes del intercambio: a = "+a+", b ="+b);
+    Intercambiar(ref a, ref b);
+    Console.WriteLine($"Después del intercambio: a = "+a+", b ="+b);
+```
+### 20. Mismos números
+```csharp
+List<int> ObtenerElementosComunes(List<int> lista1, List<int> lista2)
+{
+    List<int> comunes = new List<int>();
+    foreach (var item in lista1)
+    {
+        if (lista2.Contains(item))
+        {
+            comunes.Add(item);
+        }
+    }
+    return comunes;
+}
+    List<int> lista1 = new List<int> { 1, 2, 3, 4, 5 };
+    List<int> lista2 = new List<int> { 4, 5, 6, 7, 8 };
+    List<int> comunes = ObtenerElementosComunes(lista1, lista2);
+    Console.WriteLine("Elementos comunes:");
+    foreach (var item in comunes)
+    {
+        Console.Write(item + " ");
+    }
+```
