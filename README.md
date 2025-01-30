@@ -71,3 +71,36 @@ string nombre = Convert.ToString(Console.ReadLine());
 MostrarSaludo(nombre); 
 Console.ReadLine();
 ```
+### 7. MAtriz
+```csharp
+void CrearYMostrarMatriz(int filas, int columnas)
+    {
+        int[,] matriz = new int[filas, columnas];
+
+        int numero = 1;
+        for (int i = 0; i < filas; i++)
+        {
+            for (int j = 0; j < columnas; j++)
+            {
+                matriz[i, j] = numero++;
+            }
+        }
+
+        Console.WriteLine("La matriz generada es:");
+        for (int i = 0; i < filas; i++)
+        {
+            for (int j = 0; j < columnas; j++)
+            {
+                Console.Write(matriz[i, j] + "\t");
+            }
+            Console.WriteLine();
+        }
+    }
+Console.WriteLine("Ingresa el número de filas:");
+        int filas = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Ingresa el número de columnas:");
+        int columnas = int.Parse(Console.ReadLine());
+
+        CrearYMostrarMatriz(filas, columnas);
+```
