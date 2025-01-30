@@ -66,5 +66,8 @@ void MostrarSaludo(string nombre = "Invitado")
     Console.WriteLine($"Hola, {nombre}!");
 }
 MostrarSaludo();
-MostrarSaludo("Carlos");
+Console.WriteLine("Dime tu nombre pls");
+string nombre = Convert.ToString(Console.ReadLine()); 
+MostrarSaludo(nombre); 
+Console.ReadLine();
 ```
