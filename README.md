@@ -1,5 +1,7 @@
 # RepoScripting
 
+
+## Sin parametro, sin retorno
 ```csharp
 void Saludar()
 {
@@ -7,4 +9,14 @@ void Saludar()
 }
 
 Saludar();
+```
+## Con parametro
+```csharp
+void MostrarMensaje(string mensaje)
+{
+    Console.WriteLine(mensaje);
+}
+
+// Llamada
+MostrarMensaje("WOWOWOWOW");
 ```
