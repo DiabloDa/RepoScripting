@@ -71,7 +71,7 @@ string nombre = Convert.ToString(Console.ReadLine());
 MostrarSaludo(nombre); 
 Console.ReadLine();
 ```
-### 7. MAtriz
+### 7. Matriz
 ```csharp
 void CrearYMostrarMatriz(int filas, int columnas)
     {
@@ -103,4 +103,60 @@ Console.WriteLine("Ingresa el número de filas:");
         int columnas = int.Parse(Console.ReadLine());
 
         CrearYMostrarMatriz(filas, columnas);
+```
+### 8. Par o Impar
+```csharp
+bool EsPar(int numero)
+{
+    return numero % 2 == 0;
+}
+Console.WriteLine("Ingresa un número:");
+int numero = int.Parse(Console.ReadLine());
+
+if (EsPar(numero))
+Console.WriteLine("El número es par.");
+else
+Console.WriteLine("El número es impar.");
+```
+### 9. Radio de un circulo
+```csharp
+double CalcularAreaCirculo(double radio)
+{
+     return Math.PI * Math.Pow(radio, 2);
+}
+
+Console.WriteLine("Ingresa el radio del círculo:");
+            double radio = double.Parse(Console.ReadLine());
+
+            double area = CalcularAreaCirculo(radio);
+            Console.WriteLine("El área del círculo es: " + area);
+            Console.ReadLine();
+```
+### 10. Radio de un circulo
+```csharp
+int EncontrarMaximo(int num1, int num2, int num3)
+{
+    int maximo = num1;
+
+    if (num2 > maximo)
+        maximo = num2;
+    if (num3 > maximo)
+        maximo = num3;
+
+    return maximo;
+}
+
+Console.WriteLine("Ingresa tres números:");
+
+    Console.Write("Número 1: ");
+    int num1 = int.Parse(Console.ReadLine());
+
+    Console.Write("Número 2: ");
+    int num2 = int.Parse(Console.ReadLine());
+
+    Console.Write("Número 3: ");
+    int num3 = int.Parse(Console.ReadLine());
+
+    int maximo = EncontrarMaximo(num1, num2, num3);
+    Console.WriteLine("El número mayor es: " + maximo);
 ```
