@@ -56,7 +56,7 @@ void ImprimirLista(List<string> nombres)
         Console.WriteLine(nombre);
     }
 }
-List<string> nombres = new List<string> { "Juan", "María", "Pedro" };
+List<string> nombres = new List<string> { "Jorge", "Luisa", "Daniel" };
 ImprimirLista(nombres);
 ```
 ### 7. Con parametros cambiables
