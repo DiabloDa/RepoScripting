@@ -189,17 +189,6 @@ vint ContarCaracter(string texto, char caracter)
             }
 
             return contador;
-        }int ContarCaracter(string texto, char caracter)
-        {
-            int contador = 0;
-
-            foreach (char c in texto)
-            {
-                if (c == caracter)
-                    contador++;
-            }
-
-            return contador;
         }
 Console.WriteLine("Ingresa una cadena de texto:");
             string texto = Console.ReadLine();
