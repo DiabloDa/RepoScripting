@@ -359,7 +359,7 @@ List<int> ObtenerElementosComunes(List<int> lista1, List<int> lista2)
     }
 ```
 
-### Ejercicio Función
+## Ejercicio Función
 ```csharp
 using System;
 using System.Collections.Generic;
