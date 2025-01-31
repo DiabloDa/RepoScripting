@@ -56,7 +56,7 @@ void ImprimirLista(List<string> nombres)
         Console.WriteLine(nombre);
     }
 }
-List<string> nombres = new List<string> { "Jorge", "Luisa", "Daniel" };
+List<string> nombres = new List<string> { "Juan", "María", "Pedro" };
 ImprimirLista(nombres);
 ```
 ### 7. Con parametros cambiables
@@ -359,6 +359,48 @@ List<int> ObtenerElementosComunes(List<int> lista1, List<int> lista2)
     }
 ```
 
+## Ejercicio de ciclos (6)
+
+```csharp
+using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Talller_1_Scrpting_ejercicio_2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Ciclo();
+            
+
+        }
+        public static void Ciclo()
+        {
+            int tamaño = 0;
+            Console.WriteLine("Por favor ingrese el número hasta que desea sumar");
+            tamaño = Convert.ToInt32(Console.ReadLine());
+            int suma = 0;
+            int contador = 0;
+            int numero = 1;
+            
+            do
+            {
+
+                suma += numero;
+                contador++;
+                numero += 2;
+
+            } while (contador < tamaño);
+
+            Console.WriteLine($"La suma de los primeros {tamaño} números impares es: {suma}");
+        }
+    }
+}
+
+```
+
 ## Ejercicio Función
 ```csharp
 using System;
@@ -502,5 +544,173 @@ namespace EjercicioFunción
 }
 
 ```
+## Ejercicio de función 2 (ejercicio 21).
+```csharp
+
+using System.Reflection;
+
+namespace Taller1Scripting
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Menu();
+
+        }
+
+        public static void Menu()
+        {
+            int respuesta;
+            Console.WriteLine("Bienvenido al menú");
+            Console.WriteLine("Por favor digite el número de la opción del menú que desea elegir");
+            Console.WriteLine("-----------Menú----------");
+            Console.WriteLine("1)División.     2)Módulo.");
+            Console.WriteLine("3)Cuadrado.     3)Negativo.");
+            respuesta = int.Parse(Console.ReadLine());
+
+            switch (respuesta)
+            {
+                case 1:
+
+                    división();
+
+                    break;
+
+                case 2:
+
+                    Modulo();
+
+                    break;
+
+                case 3:
+
+                    Cuadrado();
+
+                    break;
+
+                case 4:
+
+                    Negativo();
+
+                    break;
+
+            }
+        }
+
+        public static void Terminar()
+        {
+            Console.WriteLine("Desea volver la menú o salir");
+            Console.WriteLine("Si desea volver al menú digite el número 1");
+            Console.WriteLine("Si desea salir presione 2");
+            int variable = Convert.ToInt32(Console.ReadLine());
+
+            switch (variable)
+            {
+
+                case 1:
+
+                    Menu();
+
+                    break;
+
+                case 2:
+
+                    Console.WriteLine("Graias por utilizar el programa");
+
+                    break;
+
+            }
+        }
+
+        public static void división()
+        {
+            double num1 = 0;
+            double num2 = 0;
+            double respuesta;
+
+            Console.WriteLine("Por favor ingrese el dividendo");
+            num1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Por favor ingrese el divisor");
+            num2 = Convert.ToDouble(Console.ReadLine());
+
+            if (num2 == 0)
+            {
+                Console.WriteLine("el divisor no puede ser 0");
+                Console.WriteLine("por favor vuelva a intentarlo ");
+                división();
+            }
+            else
+            {
+                respuesta = num1 / num2;
+                Console.WriteLine("El resultado de tu división es" + "" + respuesta);
+                Terminar();
+
+            }
+
+        }
+
+        public static void Modulo()
+        {
+
+            double num1 = 0;
+            double num2 = 0;
+            double respuesta;
+
+            Console.WriteLine("Por favor ingrese el dividendo");
+            num1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Por favor ingrese el divisor");
+            num2 = Convert.ToDouble(Console.ReadLine());
+
+            if (num2 == 0)
+            {
+                Console.WriteLine("el divisor no puede ser 0");
+                Console.WriteLine("por favor vuelva a intentarlo ");
+                Modulo();
+            }
+            else
+            {
+                respuesta = num1 % num2;
+                Console.WriteLine("Este es el residuo de su división" + " " + respuesta);
+                Terminar();
+            }
+            
 
 
+        }
+
+        public static void Cuadrado()
+        {
+
+            double num1 = 0;
+            double respuesta;
+
+            Console.WriteLine("Por favor ingrese el número que quiere elevar al cuadrado");
+            num1 = Convert.ToDouble(Console.ReadLine());
+
+
+            respuesta = Math.Pow(num1, 2);
+            Console.WriteLine("Este es el resultado del cuadrado" + respuesta);
+            Terminar();
+
+        }
+
+        public static void Negativo()
+        {
+
+            double num1 = 0;
+            double respuesta;
+
+            Console.WriteLine("Por favor ingrese el número que quiere convertir en negativo");
+            num1 = Convert.ToDouble(Console.ReadLine());
+
+
+            respuesta = num1 * -1;
+            Console.WriteLine("Este es su nuúmero en negativo" + respuesta);
+            Terminar();
+
+        }
+    }
+}
+```
