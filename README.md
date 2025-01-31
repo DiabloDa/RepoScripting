@@ -335,7 +335,7 @@ int[,] matriz = {
 ```
 ### 19. Intercambios
 ```csharp
-oid Intercambiar(ref int a, ref int b)
+void Intercambiar(ref int a, ref int b)
 {
     a = a + b;  
     b = a - b;  
@@ -369,3 +369,149 @@ List<int> ObtenerElementosComunes(List<int> lista1, List<int> lista2)
         Console.Write(item + " ");
     }
 ```
+
+### Ejercicio Función
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EjercicioFunción
+{
+    internal class Program
+    {
+        public static List<string> rSandwich = new List<string>();
+        static void Main(string[] args)
+        {
+            Menu();
+        }
+
+        public static void Menu()
+        {
+            int respuesta = 0;
+            Console.WriteLine("Escribe el número de la forma quieres hacer el sandwich");
+            Console.WriteLine("1. Función  2. Sin función");
+            try
+            {
+                respuesta = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Valor incorrecto");
+                Menu();
+            }
+            if (respuesta == 1)
+            {
+                Instrucciones();
+                string[] ingredientes = Sandwich();
+                foreach (var n in ingredientes)
+                {
+                    Console.WriteLine(n);
+                }
+                Menu();
+            }
+            else if(respuesta == 2)
+            {
+                Console.WriteLine("Escriba el ingrediente, pulse enter, escriba el otro y repita el proceso");
+                Console.WriteLine("con la cantidad de ingredientes que desee.");
+                Console.WriteLine("Si no va a añadir más pulse X");
+                string ing = "";
+                bool agregarMas = true;
+
+                while (agregarMas)
+                {
+                    
+                    ing = Console.ReadLine().Trim();
+
+                    if (ing.ToLower() == "x")
+                    {
+                        agregarMas = false;
+                    }
+                    else
+                    {
+                        rSandwich.Add(ing);  // Agregar el ingrediente directamente
+                    }
+                }
+
+               
+                
+                foreach (var n in rSandwich)
+                {
+                    Console.WriteLine(n);
+                }
+
+                Console.WriteLine("1");
+                Console.WriteLine("2");
+                Console.WriteLine("3");
+                Console.WriteLine("4");
+
+                Console.WriteLine("Escriba el ingrediente, pulse enter, escriba el otro y repita el proceso");
+                Console.WriteLine("con la cantidad de ingredientes que desee.");
+                Console.WriteLine("Si no va a añadir más pulse X");
+                ing = "";
+                agregarMas = true;
+
+                while (agregarMas)
+                {
+                    Console.WriteLine("Escribe un ingrediente para el sandwich (o 'X' para finalizar): ");
+                    ing = Console.ReadLine().Trim();
+
+                    if (ing.ToLower() == "x")
+                    {
+                        agregarMas = false;
+                    }
+                    else
+                    {
+                        rSandwich.Add(ing);  // Agregar el ingrediente directamente
+                    }
+                }
+
+
+
+                foreach (var n in rSandwich)
+                {
+                    Console.WriteLine(n);
+                }
+
+                Console.WriteLine("1");
+                Console.WriteLine("2");
+                Console.WriteLine("3");
+                Console.WriteLine("4");
+            }
+        }
+
+        public static void Instrucciones()
+        {
+            Console.WriteLine("Escriba el ingrediente, pulse enter, escriba el otro y repita el proceso");
+            Console.WriteLine("con la cantidad de ingredientes que desee.");
+            Console.WriteLine("Si no va a añadir más pulse X");
+            
+        }
+        public static string[] Sandwich()
+        {
+           
+            string ing = "";
+
+            ing = Console.ReadLine();
+
+            if (ing.ToLower().Trim() == "x")
+            {
+                return rSandwich.ToArray();
+            }
+            else
+            {
+                rSandwich.Add(ing);
+                Sandwich();
+            }
+
+            return rSandwich.ToArray();
+        }
+    }
+}
+
+```
+
+
