@@ -401,7 +401,7 @@ namespace Talller_1_Scrpting_ejercicio_2
 
 ```
 
-## Ejercicio Función
+## Actividad Función
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -713,4 +713,208 @@ namespace Taller1Scripting
         }
     }
 }
+```
+
+## Ejercicio 15
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Palindroma
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Menu();
+        }
+
+        public static void Menu()
+        {
+            int i = 0;
+            Console.WriteLine("Pon una palabra palindroma");
+            string palabra = Console.ReadLine();
+            i = Verificacion(i, palabra);
+            if(i == 1)
+            {
+                Console.WriteLine("La palabra es palindroma");
+            }
+            else
+            {
+                Console.WriteLine("No es palindroma");
+            }
+
+        }
+
+        public static int Verificacion(int i, string cadena)
+        {
+            string palindroma = new string(cadena.ToLower().Reverse().ToArray());
+
+            if(cadena.ToLower() == palindroma)
+            {
+                i = 1;
+            }
+            else
+            {
+                i = 0;
+            }
+            
+            return i;
+        }
+
+    }
+}
+
+```
+
+## Ejercicio 7
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PuntoCaracteres
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Menu();
+        }
+        public static void Menu()
+        {
+            string num;
+            int tamaño;
+
+            Console.WriteLine("Escriba números positivos");
+            num = Console.ReadLine();
+            tamaño = num.Length;
+
+            int[] numeros = new int[tamaño];
+
+            for (int i = 0; i < tamaño; i++)
+            {
+                try
+                {
+                    numeros[i] = int.Parse(num[i].ToString());
+                }
+                catch
+                {
+                    Console.WriteLine("Hay un entero");
+                }               
+            }
+
+            Console.WriteLine("Los números en el array son:");
+
+            foreach (int n in numeros)
+            {
+                Console.WriteLine(n);
+            }
+        }
+    }
+}
+
+```
+
+## Ejercicio 1
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace MerequetengueSemestre5
+{
+    internal class Program
+    {
+        public static int n, m = 0;
+        static void Main(string[] args)
+        {
+            Menu();
+
+        }
+
+        public static void Menu()
+        {
+            
+            Console.WriteLine("Ingrese el tamaño de la matriz");
+
+            try
+            {
+                n = int.Parse(Console.ReadLine());
+                m = int.Parse(Console.ReadLine());
+            }
+
+            catch
+            {
+                Console.WriteLine("Nel, vuelvalo a intentar");
+                Menu();
+            }
+
+            int[,] matriz = new int[n, m];
+
+            Random rand = new Random();
+
+
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    int numeroAleatorio = rand.Next(-9, 3);
+                    matriz[i, j] = numeroAleatorio;
+                }
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    Console.Write("|" + matriz[i, j] + "|");
+                }
+                Console.WriteLine("");
+            }
+
+            Console.WriteLine("Convirtiendo a positivo...");
+            Thread.Sleep(1000);
+            NumerosPos(matriz);
+
+        }
+
+        public static void NumerosPos(int[,] matriz)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    if (matriz[i,j] < 0)
+                    {
+                        matriz[i, j] = matriz[i, j] * -1; 
+                    }
+                }
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    Console.Write("|" + matriz[i, j] + "|");
+                }
+                Console.WriteLine("");
+            }
+        }
+
+
+
+    }
+}
+
 ```
